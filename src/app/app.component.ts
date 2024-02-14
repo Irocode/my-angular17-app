@@ -1,14 +1,23 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+
+import { LoggingService } from './logging.service';
+import * as fromApp from './store/app.reducer';
+import * as AuthActions from './auth/store/auth.actions';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [CommonModule, RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  title = 'my-eight-app';
+export class AppComponent implements OnInit {
+  constructor(
+    private store: Store<fromApp.AppState>,
+    private loggingService: LoggingService
+  ) {}
+
+  ngOnInit() {
+    this.store.dispatch(AuthActions.autoLogin());
+    this.loggingService.printLog('Hello from AppComponent ngOnInit');
+  }
 }
