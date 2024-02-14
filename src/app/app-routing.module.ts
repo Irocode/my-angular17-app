@@ -30,6 +30,10 @@ const appRoutes: Routes = [
   {
     path: 'signals',
     loadChildren: () => import('./signals/signals.module').then(m => m.SignalsModule),
+  },
+  {
+    path: 'routing/users',
+    loadChildren: () => import('./routing/routing.module').then(m => m.RoutingModule),
   }
 
 ];

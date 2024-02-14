@@ -1,7 +1,7 @@
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a routerLink="/" class="navbar-brand">Recipe Book</a>
+      <a routerLink="/" class="navbar-brand">A17</a>
     </div>
 
     <div class="collapse navbar-collapse">
@@ -16,8 +16,8 @@
           <a routerLink="/shopping-list">Shopping List</a>
         </li>
         <li routerLinkActive="active">
-          <a routerLink="/impressum" *ngIf="isAuthenticated">Impressum</a>
-        </li>
+          <a routerLink="/impressum">Wichtiges</a>
+        </li>       
         <li routerLinkActive="active">
           <a routerLink="/eventemitter">EventEmitter</a>
         </li>
@@ -26,6 +26,9 @@
         </li>
         <li routerLinkActive="active">
           <a routerLink="/signals">Signals</a>
+        </li>
+        <li routerLinkActive="active">
+          <a routerLink="/routing/users">Routing</a>
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
