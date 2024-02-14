@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ImpressumComponent } from './impressum.component';
+import { NewComponent } from './new/new.component';
 import { AuthGuard } from '../auth/auth.guard';
 
 
 const routes: Routes = [
   {
     path: '',
-    component: ImpressumComponent,
+    component: NewComponent,
     canActivate: [AuthGuard]
   }
 ];
@@ -16,4 +16,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class ImpressumsRoutingModule { }
+export class UnitTestRoutingModule { }

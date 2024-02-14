@@ -1,0 +1,23 @@
+<h1>new works!</h1>
+
+<div *ngIf="isLoggedIn">
+  <h1>User logged in</h1>
+  <p>User is: {{ user.name }}</p>
+</div>
+<div *ngIf="!isLoggedIn">
+  <h1>User not logged in</h1>
+  <p>Please log in first</p>
+</div>
+
+<img src="assets/angularimg.png" alt="Test Image">
+
+<hr>
+
+<div style="margin-bottom: 10px;">
+<a class="btn btn-primary" target="_blank" href="https://angular.io/guide/testing-components-scenarios"> More Infos</a>
+</div>
+<pre>
+  <code>
+    Start with ng-test
+  </code>
+</pre>

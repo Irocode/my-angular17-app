@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-import { ImpressumComponent } from './impressum.component';
+import { NewComponent } from './new/new.component';
 import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
-  declarations: [ImpressumComponent],
+  declarations: [NewComponent],
   imports: [
     FormsModule,
-    RouterModule.forChild([{ path: '', component: ImpressumComponent }]),
+    RouterModule.forChild([{ path: '', component: NewComponent }]),
     SharedModule
   ],
 })
-export class ImpressumModule { }
+export class UnitTestModule { }

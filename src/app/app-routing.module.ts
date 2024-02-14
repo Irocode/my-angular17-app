@@ -19,6 +19,19 @@ const appRoutes: Routes = [
     path: 'impressum',
     loadChildren: () => import('./impressum/impressum.module').then(m => m.ImpressumModule),
   },
+  {
+    path: 'eventemitter',
+    loadChildren: () => import('./event-emitter/family.module').then(m => m.FamilyModule),
+  },
+  {
+    path: 'unittest',
+    loadChildren: () => import('./unit-test/unit-test.module').then(m => m.UnitTestModule),
+  },
+  {
+    path: 'signals',
+    loadChildren: () => import('./signals/signals.module').then(m => m.SignalsModule),
+  }
+
 ];
 
 @NgModule({

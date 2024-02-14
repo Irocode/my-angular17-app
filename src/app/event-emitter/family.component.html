@@ -1,0 +1,13 @@
+
+<div class="container">
+    <h2>Parent</h2>
+    <app-parent
+        [parentData]="parentData"
+        (eventSource)="onFiredtoChild($event)"></app-parent>
+
+    <hr>
+    <h2>Child</h2>
+    <app-child [childData]="childData"
+        (eventSource)="onFiredtoParent($event)"></app-child>
+
+</div>

@@ -18,24 +18,34 @@
         <li routerLinkActive="active">
           <a routerLink="/impressum" *ngIf="isAuthenticated">Impressum</a>
         </li>
+        <li routerLinkActive="active">
+          <a routerLink="/eventemitter">EventEmitter</a>
+        </li>
+        <li routerLinkActive="active">
+          <a routerLink="/unittest">UnitTests</a>
+        </li>
+        <li routerLinkActive="active">
+          <a routerLink="/signals">Signals</a>
+        </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li *ngIf="isAuthenticated">
           <a style="cursor: pointer;" (click)="onLogout()">Logout</a>
         </li>
         <li class="dropdown" appDropdown *ngIf="isAuthenticated">
-          <a style="cursor: pointer;" class="dropdown-toggle" role="button"
-            >Manage <span class="caret"></span
-          ></a>
+          <a style="cursor: pointer;" class="dropdown-toggle"
+            role="button">Manage <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li>
               <a style="cursor: pointer;" (click)="onSaveData()">Save Data</a>
             </li>
             <li>
-              <a style="cursor: pointer;" (click)="onFetchDataR()">Fetch Data Shoppinglist</a>
+              <a style="cursor: pointer;" (click)="onFetchDataR()">Fetch Data
+                Shoppinglist</a>
             </li>
             <li>
-              <a style="cursor: pointer;" (click)="onFetchDataI()">Fetch Data Impressum</a>
+              <a style="cursor: pointer;" (click)="onFetchDataI()">Fetch Data
+                Impressum</a>
             </li>
           </ul>
         </li>
