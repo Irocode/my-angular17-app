@@ -34,6 +34,17 @@ const appRoutes: Routes = [
   {
     path: 'routing/users',
     loadChildren: () => import('./routing/routing.module').then(m => m.RoutingModule),
+  },
+  {
+    path: 'pipes',
+    loadChildren: () => import('./pipe/pipe.module').then(m => m.PipeModule),
+  }, {
+    path: 'rxjs',
+    loadChildren: () => import('./rxjs/rxjs.module').then(m => m.RxjsModule),
+  }
+  , {
+    path: 'animation',
+    loadChildren: () => import('./animation/animation.module').then(m => m.AnimationModule),
   }
 
 ];

@@ -1,6 +1,6 @@
- 
 
- <p>Siehe my-four-app</p>
+
+<p>Siehe my-four-app</p>
 <pre>
   <code>
     http://localhost:4200/servers/1/edit?allowEdit=1#loading
@@ -17,10 +17,10 @@
       Clickable Links:
       <textarea  id="w3review" name="w3review" rows="3" cols="50"> 
         <a [routerLink]="['/users', user.id, user.name]"	></a>
-    </textarea>
+    </textarea> 
 
-      http://localhost:4200/users/1/Max
-      Ergibt sich durch:
+    http://localhost:4200/users/1/Max
+    Ergibt sich durch:    
       <textarea  id="w3review" name="w3review" rows="7" cols="50"> 
       {
         path: 'users', component: UsersComponent, children: [
@@ -29,10 +29,9 @@
       }
     </textarea>
 
-
-    Übergabe von Variablen auf ´Route über Service:
-
-    Route:
+   Übergabe von Variablen auf ´Route über Service:
+   Hierbei keinen Emitter verwenden sondern Subject
+   Route:
     <textarea  id="w3review" name="w3review" rows="7" cols="50"> 
       const routes: Routes = [
       {path: '', component: HomeComponent},
@@ -40,20 +39,12 @@
     ];
     </textarea>
 
-    Service:
-    <textarea  id="w3review" name="w3review" rows="7" cols="50"> 
-      const routes: Routes = [
-      {path: '', component: HomeComponent},
-      {path: 'user/:id', component: UserComponent}
-    ];
-    </textarea>
-
-    <textarea  id="w3review" name="w3review" rows="25" cols="50"> 
+     Service: 
+    <textarea  id="w3review" name="w3review" rows="15" cols="50"> 
     import {EventEmitter, Injectable} from '@angular/core'
     import {Subject} from 'rxjs'
     
-    @Injectable()
-    
+    @Injectable()    
     
     //old Version Stattdessen Subject nehmen
     // export class UserService {
@@ -64,25 +55,19 @@
      }
     </textarea>
 
-    Click:
+  Click:
     <textarea  id="w3review" name="w3review" rows="5" cols="50"> 
     onActivate() {
       // // this.userService.activatedEmitter.emit(true);
       this.userService.activatedEmitter.next(true);
     }
   </textarea>
-     <textarea  id="w3review" name="w3review" rows="7" cols="50"> 
-      const routes: Routes = [
-      {path: '', component: HomeComponent},
-      {path: 'user/:id', component: UserComponent}
-    ];
-    </textarea>
+
 
   </code>
 </pre>
 
- 
- <!-- <div class="container">
+<!-- <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
       <ul class="nav nav-tabs">

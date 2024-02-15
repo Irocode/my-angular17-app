@@ -17,6 +17,9 @@ import { environment } from '../environments/environment.development';
 import { RecipeEffects } from './recipes/store/recipe.effects';
 import * as fromAuth from './auth/store/auth.reducer';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
 @NgModule({
   declarations: [AppComponent, HeaderComponent],
   imports: [
@@ -28,7 +31,8 @@ import * as fromAuth from './auth/store/auth.reducer';
     StoreDevtoolsModule.instrument({ logOnly: environment.production }),
     StoreRouterConnectingModule.forRoot(),
     SharedModule,
-    CoreModule
+    CoreModule,
+    BrowserAnimationsModule
   ],
   bootstrap: [AppComponent]
   // providers: [LoggingService]

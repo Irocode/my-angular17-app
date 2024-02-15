@@ -10,7 +10,9 @@ ng new my-first-app --routing false
 ng new my-first-app --no-strict --standalone false --routing false
 npm i --save bootstrap@3    
 
-npx json-server db.json    
+npm install json-server
+npx json-server db.json   
+json-server --watch db.json 
 
 ng add @ngrx/effects
 ng add @ngrx/store-devtools
@@ -24,7 +26,100 @@ ng update @angular/cli
 npm cache clean --force
 npm update
 ng update
-
-
 </textarea>
 </code></pre>
+
+<p>ngOnChanges funktioniert nur bei Inputs</p>
+<pre><code>
+    <textarea name="" id="" cols="5" rows="5">    
+        ngOnChanges(changes: SimpleChanges): void {
+            if (changes['var']) {
+              console.log('var1', this.var);            
+            }
+          }
+    </textarea>
+    </code></pre>
+
+<hr>
+<p>SSH Key generieren:</p>
+<p>https://github.com/settings/profile   SSH KEY</p>
+<p>  Generieren: Console -> ssh-keygen -t rsa -b 4096 -C "bernd.obendorferATZEICHENexample.com" "</p>
+<p>id_rsa.pub öffnen und eintragen im Github und Sourcetree</p>
+
+<hr>
+<p>Angular CLI</p>
+<p>ng new projektname: Erstellt ein neues Angular-Projekt mit dem angegebenen
+  Namen.</p>
+<p> ng g c ordner/Ordnername --standalone false</p>
+
+<p> ng generate schemaname name: Generiert neue Dateien für verschiedene Teile
+  deiner Angular-Anwendung basierend auf vorgegebenen Schemata wie z. B.
+  component, directive, service, module usw.</p>
+
+<p> ng serve: Startet einen lokalen Entwicklungsserver und erstellt das
+  Angular-Projekt. Änderungen am Code werden automatisch erkannt und die
+  Anwendung wird neu geladen.</p>
+
+<p> ng build: Kompiliert das Angular-Projekt für die Bereitstellung.
+  Standardmäßig wird der Build im Verzeichnis dist/ erzeugt.
+</p>
+<p> ng test: Führt Unit-Tests für das Angular-Projekt aus. Es verwendet Karma
+  als Test-Runner und Jasmine für die Test-Syntax.
+</p>
+<p>ng e2e: Führt End-to-End-Tests für das Angular-Projekt aus. Es verwendet
+  Protractor, um die Anwendung in einem echten Browser zu testen und
+  Interaktionen mit der Benutzeroberfläche durchzuführen.
+</p>
+<p> ng lint: Führt statische Code-Analyse durch, um potenzielle Fehler und
+  Codestile-Verstöße zu finden. Es verwendet TSLint oder ESLint (abhängig von
+  der Angular-Version).
+</p>
+<p>ng add paketname: Fügt ein neues Paket zur Angular-Anwendung hinzu. Dieser
+  Befehl wird verwendet, um zusätzliche Funktionen oder Bibliotheken zu
+  installieren und die entsprechenden Konfigurationen automatisch einzurichten.
+</p>
+<p> ng update paketname: Aktualisiert die Abhängigkeiten deiner
+  Angular-Anwendung auf die neuesten verfügbaren Versionen. Dies umfasst auch
+  Angular selbst sowie andere Abhängigkeiten wie Angular CLI und verwendete
+  Bibliotheken.
+</p>
+<p> ng config: Konfiguriert die Einstellungen für das Angular-Projekt, z. B. das
+  Standardformat für Dateiänderungen oder das Vorhandensein von TSLint-Regeln.
+</p>
+<p> ng help: Zeigt eine Liste der verfügbaren Angular CLI-Befehle an und bietet
+  Hilfe für jeden Befehl.
+</p>
+
+<hr>
+<p>API Endpoint (REST, SOAP) <i>Bei APIs kann ein Endpunkt eine URL eines
+    Servers oder Dienstes enthalten. Jeder Endpunkt ist der Ort, von dem aus
+    APIs auf die Ressourcen zugreifen können, die sie zur Ausführung ihrer
+    Funktion benötigen.</i></p>
+<p>Refactoring</p>
+<p>Daily Standup</p>
+<p>Boilerplate = <i>Code der immer wieder kommt und an mehereren Stellen
+    verwendet wird</i></p>
+<p>pushen</p>
+<p>pullen</p>
+<p>Springtplanning </p>
+<p>Sprint Review = <i>Das Team bekommt ein Feedback und es wird geprüft, ob der
+    Product Backlog angepasst werden muss</i></p>
+<p>Sprint Retrospective</p>
+<p>User Story</p>
+<p>Task</p>
+<p>Jira</p>
+<p>Confluenc<i>Mit Confluence kannst du alle Dokumente und zugehörigen
+    Informationen in einem zentralen Repository speichern. Es ist möglich,
+    Wissensmanagement nahtlos in den Lebenszyklus der Produktentwicklung zu
+    integrieren und die Zusammenarbeit zu optimieren</i></p>
+
+<hr>
+<p>Standalone Componenten Vorteile:</p>
+<p><i> Wiederverwendbarkeit</i></p>
+<p><i> Isolierung und Unabhängigkeit</i></p>
+<p><i> Verbesserte Lesbarkeit und Wartbarkeit</i></p>
+<p><i> Bessere Trennung von Anliegen</i></p>
+<p><i> Flexibilität und Skalierbarkeit:</i></p>
+<p><i> Einfache Integration in andere Anwendungen</i></p>
+<hr>
+<br>
