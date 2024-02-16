@@ -128,7 +128,7 @@ export class AnimationComponent implements OnInit {
   }, {
     type: 'Note: 2',
     content: 'Goffy'
-  }];;
+  }];
 
   list = ['Milk', 'Sugar', 'Bread'];
 
