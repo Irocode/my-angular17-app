@@ -28,6 +28,7 @@ import * as fromRecipes from './store/recipe.reducer';
     RecipesRoutingModule,
     SharedModule,
     StoreModule.forFeature('recipes', fromRecipes.recipeReducer),
+  
 
   ]
 })

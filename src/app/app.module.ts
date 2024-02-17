@@ -12,13 +12,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './core.module';
 import * as fromApp from './store/app.reducer';
-import { AuthEffects } from './auth/store/auth.effects';
 import { environment } from '../environments/environment.development';
-import { RecipeEffects } from './recipes/store/recipe.effects';
 import * as fromAuth from './auth/store/auth.reducer';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { AuthEffects } from './auth/store/auth.effects';
+import { RecipeEffects } from './recipes/store/recipe.effects';
+import { ArticleEffects } from './shopping-list/store/article.effects';
 
 
 @NgModule({
@@ -27,7 +28,7 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    EffectsModule.forRoot([AuthEffects, RecipeEffects]),
+    EffectsModule.forRoot([AuthEffects, RecipeEffects, ArticleEffects]),
     StoreModule.forRoot({ auth: fromAuth.authReducer }),
     StoreDevtoolsModule.instrument({ logOnly: environment.production }),
     StoreRouterConnectingModule.forRoot(),

@@ -56,3 +56,7 @@ const _recipeReducer = createReducer(
 export function recipeReducer(state: State, action: Action) {
   return _recipeReducer(state, action);
 }
+
+export function articleReducer(arg0: string, articleReducer: any): any[] | import("@angular/core").Type<any> | import("@angular/core").ModuleWithProviders<{}> {
+  throw new Error('Function not implemented.');
+}

@@ -6,6 +6,7 @@ import { Store } from '@ngrx/store';
 import * as fromApp from '../store/app.reducer';
 import * as AuthActions from '../auth/store/auth.actions';
 import * as RecipeActions from '../recipes/store/recipe.actions';
+import * as ArticleActions from '../shopping-list/store/article.actions';
 
 @Component({
   selector: 'app-header',
@@ -17,7 +18,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   constructor(
     private store: Store<fromApp.AppState>
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.userSub = this.store
@@ -37,8 +38,18 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   onFetchDataR() {
     // this.dataStorageService.fetchRecipes().subscribe();
-    this.store.dispatch(RecipeActions.fetchRecipes()); 
+    this.store.dispatch(RecipeActions.fetchRecipes());
   }
+
+  onFetchDataShoppingList() {
+    this.store.dispatch(ArticleActions.fetchArticles());
+  }
+
+  onSaveDataShoppingList() {
+    console.log('onSaveDataShoppingList');
+    this.store.dispatch(ArticleActions.storeArticles());
+  }
+
 
   onLogout() {
     this.store.dispatch(AuthActions.logout());

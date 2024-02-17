@@ -1,3 +1,5 @@
+ {{editModeIngredient}}
+
 <div class="row">
   <div class="col-xs-12">
     <form (ngSubmit)="onSubmit(f)" #f="ngForm">
@@ -31,12 +33,12 @@
           <button
             class="btn btn-success"
             type="submit"
-            [disabled]="!f.valid">{{ editMode ? 'Update' : 'Add' }}</button>
+            [disabled]="!f.valid">{{ editModeIngredient ? 'Update' : 'Add' }}</button>
           <button
             class="btn btn-danger"
             type="button"
             (click)="onDelete()"
-            *ngIf="editMode">Delete</button>
+            *ngIf="editModeIngredient">Delete</button>
           <button class="btn btn-primary" type="button" (click)="onClear()">Clear</button>
         </div>
       </div>

@@ -38,3 +38,12 @@ export const fetchRecipes = createAction(
 export const storeRecipes = createAction(
   '[Recipe] Store Recipes'
 );
+
+
+export const fetchShoppingLists = createAction(
+  '[ShoppingList] Fetch ShoppingLists'
+);
+
+export const storeShoppingLists = createAction(
+  '[ShoppingList] Store ShoppingLists'
+);

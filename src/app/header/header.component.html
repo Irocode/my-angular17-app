@@ -12,36 +12,34 @@
         <li routerLinkActive="active" *ngIf="!isAuthenticated">
           <a routerLink="/auth">Authenticate</a>
         </li>
-        <li routerLinkActive="active">
+        <li routerLinkActive="active" *ngIf="isAuthenticated">
           <a routerLink="/shopping-list">Shopping List</a>
         </li>
-        <li routerLinkActive="active">
+        <li routerLinkActive="active" *ngIf="isAuthenticated">
           <a routerLink="/impressum">Wichtiges</a>
-        </li>       
-        <li routerLinkActive="active">
+        </li>
+        <li routerLinkActive="active" *ngIf="isAuthenticated">
           <a routerLink="/eventemitter">EventEmitter</a>
         </li>
-        <li routerLinkActive="active">
+        <li routerLinkActive="active" *ngIf="isAuthenticated">
           <a routerLink="/unittest">UnitTests</a>
         </li>
-        <li routerLinkActive="active">
+        <li routerLinkActive="active" *ngIf="isAuthenticated">
           <a routerLink="/signals">Signals</a>
         </li>
-        <li routerLinkActive="active">
+        <li routerLinkActive="active" *ngIf="isAuthenticated">
           <a routerLink="/routing/users">Routing</a>
         </li>
-        <li routerLinkActive="active">
+        <li routerLinkActive="active" *ngIf="isAuthenticated">
           <a routerLink="/pipes">Pipes</a>
         </li>
-        <li routerLinkActive="active">
+        <li routerLinkActive="active" *ngIf="isAuthenticated">
           <a routerLink="/rxjs">Rxjs</a>
         </li>
-        <li routerLinkActive="active">
+        <li routerLinkActive="active" *ngIf="isAuthenticated">
           <a routerLink="/animation">Animation</a>
         </li>
 
-
-        
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li *ngIf="isAuthenticated">
@@ -52,15 +50,22 @@
             role="button">Manage <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li>
-              <a style="cursor: pointer;" (click)="onSaveData()">Save Data</a>
+              <a style="cursor: pointer;" (click)="onSaveData()">Save Data
+                Recipes</a>
             </li>
             <li>
               <a style="cursor: pointer;" (click)="onFetchDataR()">Fetch Data
+                Recipes</a>
+            </li>
+            <li>
+              <a style="cursor: pointer;"
+                (click)="onFetchDataShoppingList()">Fetch Data
                 Shoppinglist</a>
             </li>
             <li>
-              <a style="cursor: pointer;" (click)="onFetchDataI()">Fetch Data
-                Impressum</a>
+              <a style="cursor: pointer;"
+                (click)="onSaveDataShoppingList()">Save Data
+                Shoppinglist</a>
             </li>
           </ul>
         </li>
