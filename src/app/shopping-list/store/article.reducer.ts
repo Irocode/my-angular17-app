@@ -41,17 +41,17 @@ const _articleReducer = createReducer(
       )
     })
   ),
-
 */
-
 
   on(
     ArticlesActions.addArticle,
     (state, action) => ({
       ...state,
-      recipes: state.articles.concat({ ...action.article })
+      articles: state.articles.concat({ ...action.article })
     })
   ),
+
+ 
 
   on(
     ArticlesActions.updateArticle,
@@ -80,7 +80,7 @@ const _articleReducer = createReducer(
     ArticlesActions.setArticles,
     (state, action) => ({
       ...state,
-      articles: [ ...action.articles ]
+      articles: [...action.articles]
     })
   ),
 
@@ -88,7 +88,7 @@ const _articleReducer = createReducer(
     ArticlesActions.startEdit,
     (state, action) => ({
       ...state, editIndex:
-      action.index
+        action.index
     })
   ),
 
