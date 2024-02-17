@@ -17,9 +17,6 @@ export const updateArticle = createAction(
   }>()
 );
 
-
-
-
 export const deleteArticle = createAction(
   '[Article] Delete Article'
 );
@@ -47,7 +44,6 @@ export const startEdit = createAction(
     index: number
   }>()
 );
-
 
 export const stopEdit = createAction(
   '[Article] Stop Edit'

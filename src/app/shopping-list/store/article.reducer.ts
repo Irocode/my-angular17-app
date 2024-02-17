@@ -69,7 +69,7 @@ const _articleReducer = createReducer(
     (state) => ({
       ...state,
       editIndex: -1,
-      ingredients: state.articles.filter(
+      articles: state.articles.filter(
         (_, index) => index !== state.editIndex
       )
     })
