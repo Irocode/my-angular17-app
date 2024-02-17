@@ -1,4 +1,4 @@
- {{editModeIngredient}}
+
 
 <div class="row">
   <div class="col-xs-12">
@@ -33,12 +33,12 @@
           <button
             class="btn btn-success"
             type="submit"
-            [disabled]="!f.valid">{{ editModeIngredient ? 'Update' : 'Add' }}</button>
+            [disabled]="!f.valid">{{ editModeArticle ? 'Update' : 'Add' }}</button>
           <button
             class="btn btn-danger"
             type="button"
             (click)="onDelete()"
-            *ngIf="editModeIngredient">Delete</button>
+            *ngIf="editModeArticle">Delete</button>
           <button class="btn btn-primary" type="button" (click)="onClear()">Clear</button>
         </div>
       </div>
