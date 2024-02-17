@@ -26,12 +26,13 @@ export class ShoppingEditComponent implements OnInit, OnDestroy {
   editModeArticle = false;
 
   constructor(
-    private storeIngredients: Store<fromAppIngredients.AppState>,
+ 
     private storeArticles: Store<fromAppArticles.AppState>
 
   ) { }
 
   ngOnInit() { 
+   this.storeArticles.dispatch(ArticleActions.fetchArticles());
 
     this.subscriptionArticles = this.storeArticles
       .select('articles')
@@ -66,7 +67,7 @@ export class ShoppingEditComponent implements OnInit, OnDestroy {
   onClear() {
     this.slForm.reset();
     this.editModeArticle = false;
-    this.storeIngredients.dispatch(ShoppingListActions.stopEdit());
+    this.storeArticles.dispatch(ShoppingListActions.stopEdit());
   }
 
   onDelete() {
