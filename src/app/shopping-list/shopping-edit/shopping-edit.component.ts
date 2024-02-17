@@ -91,10 +91,10 @@ export class ShoppingEditComponent implements OnInit, OnDestroy {
 
     // NEW
 
-    const valueArticle = form.value;
-    const article = new Article(valueArticle.name, valueArticle.amount);
+   
+    const article = new Article(value.name, value.amount);
     if (this.editModeArticle) {
-      this.storeArticles.dispatch(ArticleActions.updateArticle({index: 1, article: this.articlesForm.value}));
+      this.storeArticles.dispatch(ArticleActions.updateArticle({ article }));
     } else {
       this.storeArticles.dispatch(ArticleActions.addArticle({ article }));
     }

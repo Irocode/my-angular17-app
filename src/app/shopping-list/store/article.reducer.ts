@@ -57,8 +57,9 @@ const _articleReducer = createReducer(
     ArticlesActions.updateArticle,
     (state, action) => ({
       ...state,
+      editIndex: -1,
       articles: state.articles.map(
-        (article, index) => index === action.index ? { ...action.article } : article
+        (article, index) => index === state.editIndex ? { ...action.article } : article
       )
     })
   ),

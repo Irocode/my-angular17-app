@@ -9,13 +9,22 @@ export const addArticle = createAction(
   }>()
 );
 
+// export const updateArticle = createAction(
+//   '[Article] Update Article',
+//   props<{
+//     index: number,
+//     article: Article
+//   }>()
+// );
+
+
 export const updateArticle = createAction(
   '[Article] Update Article',
   props<{
-    index: number,
     article: Article
   }>()
 );
+
 
 export const deleteArticle = createAction(
   '[Article] Delete Article'
