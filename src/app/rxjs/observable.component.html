@@ -1,2 +1,52 @@
 
-<button (click)="observeNotification()">observeNotification</button>
+<button *ngIf="load" (click)="dataCall()">Daten per async abrufen</button>
+<button *ngIf="!load" (click)="dataKill()">Daten vernichten</button>
+
+
+<br><br>
+<div *ngIf="posts$ | async as posts">
+    <ul>
+        <li *ngFor="let post of posts">{{ post.id }} {{ post.title }} {{ post.body }} {{ post.userId }}</li>
+    </ul>
+</div>
+
+
+<!-- Endweder posts$ | async   oder dataSource -->
+<table mat-table [dataSource]="posts$ | async " matSort (matSortChange)="announceSortChange($event)"
+       class="mat-elevation-z8">
+
+  <!-- Position Column -->
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by number">
+      No.
+    </th>
+    <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="title">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by name">
+      Title
+    </th>
+    <td mat-cell *matCellDef="let element"> {{element.title}} </td>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="body">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by weight">
+      Body
+    </th>
+    <td mat-cell *matCellDef="let element"> {{element.body}} </td>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="userId">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by symbol">
+        UserId
+    </th>
+    <td mat-cell *matCellDef="let element"> {{element.userId}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

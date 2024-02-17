@@ -1,26 +1,16 @@
-<h3>Wichtig:</h3>
 
-<p>Promises vs Observables</p>
-<pre><code>
-<textarea name="" id="" cols="20" rows="15">
-private value: Subscription;
-Subscription ist ein Objekt, das uns hilft, das Observable zu beobachten und zu verwalten.
-
-private value: new Subject<string>();
-Subject ist ein spezielles Observable, das auch Werte auszusenden kann.
-
-private value = new BehaviorSubject<string>('Magazine issue 1');
-BehaviorSubject ist ein spezielles Subject, das immer den letzten Wert speichert und ihn sofort an neue Abonnenten weitergibt.
-
-</textarea>
-</code></pre>
+<p>Behavior Subject mit Subscription:</p>
+<app-behavior-subject></app-behavior-subject>
+<hr>
+<p>Subject-Austausch der Daten von 2 Components:</p>
+<app-sender-subject></app-sender-subject>
+<app-empfaenger-subject></app-empfaenger-subject>
 
 <hr>
-<p>Beispiel eventEmitter vs Subject: Comp1 zu Comp2</p>
-<app-comp-one></app-comp-one>
-<app-comp-two></app-comp-two>
+Observable mit Subscription:
+<app-observable-new></app-observable-new>
 <hr>
-<p>Beispiel Observable:</p>
+
+<p>Beispiel Observable mit Async:</p>
 <app-observable></app-observable>
 <hr>
-<p>Beispiel Subscription:</p>

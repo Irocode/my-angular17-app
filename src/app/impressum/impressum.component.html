@@ -1,7 +1,6 @@
 <h3>Wichtig:</h3>
 
-<pre><code>
-<textarea name="" id="" cols="20" rows="10">
+<textarea name id cols="20" rows="10">
 port umstellen: ng serve --port 4401   
 ng serve --open  / öffnet den Browser
 ng new my-first-app
@@ -28,101 +27,457 @@ npm cache clean --force
 npm update
 ng update
 </textarea>
-</code></pre>
 
 <p>ngOnChanges funktioniert nur bei Inputs</p>
-<pre><code>
-    <textarea name="" id="" cols="5" rows="5">    
+
+<textarea name id cols="5" rows="5">    
         ngOnChanges(changes: SimpleChanges): void {
             if (changes['var']) {
               console.log('var1', this.var);            
             }
           }
     </textarea>
-    </code></pre>
 
 <hr>
-<p>SSH Key generieren:</p>
-<p>https://github.com/settings/profile   SSH KEY</p>
-<p>  Generieren: Console -> ssh-keygen -t rsa -b 4096 -C "bernd.obendorferATZEICHENexample.com" "</p>
-<p>id_rsa.pub öffnen und eintragen im Github und Sourcetree</p>
-
-<hr>
-<p>Angular CLI</p>
-<p>ng new projektname: Erstellt ein neues Angular-Projekt mit dem angegebenen
-  Namen.</p>
-<p> ng g c ordner/Ordnername --standalone false</p>
-
-<p> ng generate schemaname name: Generiert neue Dateien für verschiedene Teile
-  deiner Angular-Anwendung basierend auf vorgegebenen Schemata wie z. B.
-  component, directive, service, module usw.</p>
-
-<p> ng serve: Startet einen lokalen Entwicklungsserver und erstellt das
-  Angular-Projekt. Änderungen am Code werden automatisch erkannt und die
-  Anwendung wird neu geladen.</p>
-
-<p> ng build: Kompiliert das Angular-Projekt für die Bereitstellung.
-  Standardmäßig wird der Build im Verzeichnis dist/ erzeugt.
-</p>
-<p> ng test: Führt Unit-Tests für das Angular-Projekt aus. Es verwendet Karma
-  als Test-Runner und Jasmine für die Test-Syntax.
-</p>
-<p>ng e2e: Führt End-to-End-Tests für das Angular-Projekt aus. Es verwendet
-  Protractor, um die Anwendung in einem echten Browser zu testen und
-  Interaktionen mit der Benutzeroberfläche durchzuführen.
-</p>
-<p> ng lint: Führt statische Code-Analyse durch, um potenzielle Fehler und
-  Codestile-Verstöße zu finden. Es verwendet TSLint oder ESLint (abhängig von
-  der Angular-Version).
-</p>
-<p>ng add paketname: Fügt ein neues Paket zur Angular-Anwendung hinzu. Dieser
-  Befehl wird verwendet, um zusätzliche Funktionen oder Bibliotheken zu
-  installieren und die entsprechenden Konfigurationen automatisch einzurichten.
-</p>
-<p> ng update paketname: Aktualisiert die Abhängigkeiten deiner
-  Angular-Anwendung auf die neuesten verfügbaren Versionen. Dies umfasst auch
-  Angular selbst sowie andere Abhängigkeiten wie Angular CLI und verwendete
-  Bibliotheken.
-</p>
-<p> ng config: Konfiguriert die Einstellungen für das Angular-Projekt, z. B. das
-  Standardformat für Dateiänderungen oder das Vorhandensein von TSLint-Regeln.
-</p>
-<p> ng help: Zeigt eine Liste der verfügbaren Angular CLI-Befehle an und bietet
-  Hilfe für jeden Befehl.
-</p>
-
-<hr>
-<p>API Endpoint (REST, SOAP) <i>Bei APIs kann ein Endpunkt eine URL eines
-    Servers oder Dienstes enthalten. Jeder Endpunkt ist der Ort, von dem aus
-    APIs auf die Ressourcen zugreifen können, die sie zur Ausführung ihrer
-    Funktion benötigen.</i></p>
-<p>Refactoring</p>
-<p>Daily Standup</p>
-<p>Boilerplate = <i>Code der immer wieder kommt und an mehereren Stellen
-    verwendet wird</i></p>
-<p>pushen</p>
-<p>pullen</p>
-<p>Springtplanning </p>
-<p>Sprint Review = <i>Das Team bekommt ein Feedback und es wird geprüft, ob der
-    Product Backlog angepasst werden muss</i></p>
-<p>Sprint Retrospective</p>
-<p>User Story</p>
-<p>Task</p>
-<p>Jira</p>
-<p>Confluenc<i>Mit Confluence kannst du alle Dokumente und zugehörigen
-    Informationen in einem zentralen Repository speichern. Es ist möglich,
-    Wissensmanagement nahtlos in den Lebenszyklus der Produktentwicklung zu
-    integrieren und die Zusammenarbeit zu optimieren</i></p>
-
-<hr>
-<p>Standalone Componenten Vorteile:</p>
-<p><i> Wiederverwendbarkeit</i></p>
-<p><i> Isolierung und Unabhängigkeit</i></p>
-<p><i> Verbesserte Lesbarkeit und Wartbarkeit</i></p>
-<p><i> Bessere Trennung von Anliegen</i></p>
-<p><i> Flexibilität und Skalierbarkeit:</i></p>
-<p><i> Einfache Integration in andere Anwendungen</i></p>
-<hr>
-
 
 <br>
+
+<div class="example-action-buttons">
+  <button mat-button (click)="accordion.openAll()">Expand All</button>
+  <button mat-button (click)="accordion.closeAll()">Collapse All</button>
+</div>
+<mat-accordion class="example-headers-align" multi>
+
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Erklärungen
+      </mat-panel-title>
+      <mat-panel-description>
+        Wichtig
+        <mat-icon>account_circle</mat-icon>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <p><b>Endpoint</b></p>
+
+    <p>API Endpoint (REST, SOAP) <i>Bei APIs kann ein Endpunkt eine URL eines
+        Servers oder Dienstes enthalten. Jeder Endpunkt ist der Ort, von dem aus
+        APIs auf die Ressourcen zugreifen können, die sie zur Ausführung ihrer
+        Funktion benötigen.</i></p>
+
+    <hr>
+
+    <p><b>Observable wird wo verwendet:</b></p>
+
+    <p>HTTP-Anfragen: Wenn du Daten von einem Server abrufen möchtest, ist die
+      HTTP-Anfrage asynchron, da die Antwort nicht sofort verfügbar ist. Ein
+      Observable kann verwendet werden, um die HTTP-Anfrage zu machen und die
+      Antwort zu verarbeiten, wenn sie zurückkommt. </p>
+
+    <p>Benutzerinteraktionen: Wenn du auf Benutzerinteraktionen reagieren
+      möchtest, wie z.B. Klicks auf Schaltflächen oder Eingaben in Formularen,
+      können Observables verwendet werden, um auf diese Ereignisse zu hören und
+      entsprechend zu handeln.</p>
+
+    <p>Timer und Intervalle: Wenn du periodische Aufgaben ausführen möchtest,
+      wie z.B. das Aktualisieren von Daten in Echtzeit oder das Ausführen einer
+      Animation in regelmäßigen Abständen, können Observables verwendet werden,
+      um Timer und Intervalle zu erstellen.</p>
+
+    <p>Websockets: Wenn du eine bidirektionale Kommunikation zwischen Client und
+      Server benötigst, wie z.B. bei Chat-Anwendungen oder Live-Dashboards,
+      können Observables verwendet werden, um auf Ereignisse von Websockets zu
+      hören.</p>
+
+    <p><i> Generell gesagt, immer wenn du mit Daten oder Ereignissen arbeitest,
+        die
+        nicht sofort verfügbar sind und die Zeit brauchen, um zu laden oder zu
+        aktualisieren, kannst du ein Observable verwenden, um diese asynchronen
+        Vorgänge zu verwalten und mit ihnen zu interagieren.</i></p>
+    <hr>
+
+    <p><b>Subject wird wo verwendet:</b></p>
+
+    <p>Event-Benachrichtigungen: Wenn du in deiner Anwendung Ereignisse auslösen
+      möchtest, auf die andere Teile deiner Anwendung reagieren können, kannst
+      du ein Subject verwenden, um diese Ereignisse zu senden. Andere Teile der
+      Anwendung können das Subject abonnieren und auf neue Ereignisse
+      warten.</p>
+
+    <p>Zustandsverwaltung: Wenn du einen gemeinsamen Zustand zwischen
+      verschiedenen Komponenten deiner Anwendung haben möchtest, kannst du ein
+      Subject verwenden, um Änderungen an diesem Zustand zu veröffentlichen.
+      Komponenten können das Subject abonnieren, um über Änderungen informiert
+      zu werden und ihren Zustand entsprechend zu aktualisieren.</p>
+
+    <p>Kommunikation zwischen Komponenten: Wenn du Daten zwischen verschiedenen
+      Komponenten in deiner Anwendung austauschen möchtest, aber keine direkte
+      Eltern-Kind-Beziehung zwischen ihnen besteht, kannst du ein Subject
+      verwenden, um Daten zu senden und zu empfangen.</p>
+
+    <p>Ergebnisrückgabe von asynchronen Operationen: Wenn du eine asynchrone
+      Operation durchführst und das Ergebnis an mehrere Stellen in deiner
+      Anwendung weitergeben möchtest, kannst du ein Subject verwenden, um das
+      Ergebnis zu veröffentlichen und alle Interessenten darüber zu
+      informieren.</p>
+
+    <p><i>Insgesamt ist ein Subject sehr flexibel und kann in vielen
+        verschiedenen Szenarien eingesetzt werden, in denen du eine Möglichkeit
+        benötigst, um Daten zwischen verschiedenen Teilen deiner Anwendung zu
+        teilen oder zu kommunizieren.</i></p>
+
+    <p>Beispiel: zwischen zwei Komponenten die nicht Kind-Eltern sind:</p>
+
+    <textarea name id cols="20" rows="17">
+import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class DataService {
+  private dataSubject = new Subject<string>();
+
+  sendData(data: string) {
+    this.dataSubject.next(data);
+  }
+
+  getData() {
+    return this.dataSubject.asObservable();
+  }
+}          
+</textarea>
+
+    <textarea name id cols="20" rows="17">
+  import { Component } from '@angular/core';
+  import { DataService } from './data.service';
+  
+  @Component({
+    selector: 'app-sender',
+    template: `
+      <button (click)="sendData()">Send Data</button>
+    `
+  })
+  export class SenderComponent {
+    constructor(private dataService: DataService) {}
+  
+    sendData() {
+      this.dataService.sendData('Hello from SenderComponent!');
+    }
+  }
+</textarea>
+
+    <textarea name id cols="20" rows="20">
+    import { Component, OnDestroy } from '@angular/core';
+    import { DataService } from './data.service';
+    import { Subscription } from 'rxjs';
+    
+    @Component({
+      selector: 'app-receiver',
+      template: `
+        <p> ZWEI GESCHUNGENE KLAMMERN receivedData  ZWEI GESCHUNGENE KLAMMERN</p>
+      `
+    })
+    export class ReceiverComponent implements OnDestroy {
+      receivedData: string;
+      private subscription: Subscription;
+    
+      constructor(private dataService: DataService) {
+        this.subscription = this.dataService.getData().subscribe(data => {
+          this.receivedData = data;
+        });
+      }
+    
+      ngOnDestroy() {
+        this.subscription.unsubscribe();
+      }
+    }    
+  </textarea>
+
+    <hr>
+
+    <p><b>Subscription wird wo verwendet:</b></p>
+
+    <p>Abonnement auf Observables: Wenn du ein Observable hast, das Daten
+      emittiert, auf die du reagieren möchtest, verwendest du eine Subscription,
+      um auf dieses Observable zu hören und die emittierten Daten zu
+      verarbeiten.</p>
+
+    <p>Vermeidung von Speicherlecks: Wenn du ein Observable abonnierst, musst du
+      sicherstellen, dass du das Abonnement auch wieder beendest, wenn du es
+      nicht mehr benötigst. Andernfalls können Speicherlecks auftreten, da das
+      Observable weiterhin Ressourcen belegt. Eine Subscription ermöglicht es
+      dir, das Abonnement zu beenden, wenn du fertig bist, um Speicherlecks zu
+      vermeiden.</p>
+
+    <p>Aufräumen von Ressourcen: Wenn du Ressourcen wie z.B. HTTP-Verbindungen
+      oder Timer verwendest, die mit einem Observable verbunden sind, musst du
+      sicherstellen, dass diese Ressourcen freigegeben werden, wenn du sie nicht
+      mehr benötigst. Eine Subscription ermöglicht es dir, diese Ressourcen
+      freizugeben, indem du das Abonnement beendest.</p>
+
+    <p>Reaktion auf Komponentenlebenszyklus: In Angular-Komponenten kannst du
+      Subscriptions verwenden, um auf den Lebenszyklus der Komponente zu
+      reagieren. Du kannst Subscriptions z.B. im ngOnInit()-Hook erstellen und
+      im ngOnDestroy()-Hook wieder aufräumen, um sicherzustellen, dass keine
+      Speicherlecks auftreten.</p>
+
+    <p> <i>
+        Insgesamt wird eine Subscription verwendet, um auf Observable-Streams zu
+        hören, Ressourcen freizugeben und Speicherlecks zu vermeiden. Sie ist
+        ein wichtiger Bestandteil beim Arbeiten mit asynchronen Daten in
+        Angular-Anwendungen.
+
+      </i> </p>
+
+    <textarea name id cols="10" rows="10">
+          import { Injectable } from '@angular/core';
+          import { Observable, interval } from 'rxjs';
+          
+          @Injectable({
+            providedIn: 'root'
+          })
+          export class DataService {
+            getData(): Observable<number> {
+              return interval(1000); // Erzeugt ein Observable,
+               das alle Sekunde einen Wert emittiert
+            }
+          }
+         </textarea>
+
+    <textarea name id cols="10" rows="25">
+          import { Component, OnInit, OnDestroy } from '@angular/core';
+          import { DataService } from './data.service';
+          import { Subscription } from 'rxjs';
+          
+          @Component({
+            selector: 'app-example',
+            template: `
+              <p *ngIf="data">Aktuelle Daten: ZWEI GESCHUNGENE KLAMMERN data ZWEI GESCHUNGENE KLAMMERN</p>
+            `
+          })
+          export class ExampleComponent implements OnInit, OnDestroy {
+            data: number;
+            private subscription: Subscription;
+          
+            constructor(private dataService: DataService) {}
+          
+            ngOnInit() {
+              this.subscription = this.dataService.getData().subscribe(value => {
+                this.data = value; // Aktualisiere die Daten in der Komponente mit dem emittierten Wert
+              });
+            }
+          
+            ngOnDestroy() {
+              this.subscription.unsubscribe(); // Beende das Abonnement, um Speicherlecks zu vermeiden
+            }
+          }
+         </textarea>
+
+    <hr>
+
+    <p><b> Was ist ein BehaviorSubject:</b></p>
+
+    <p> href="https://jsbin.com/qowulet/edit?js,console" target="_blank"></p>
+    <p> <i> Hinweis: Bei BehaviorSubject bekommt jeder den aktuellen selben
+        Wert</i> </p>
+
+    <p>Anfänglicher Wert: Anders als ein herkömmliches Observable hat ein
+      BehaviorSubject einen anfänglichen Wert, der bei der Erstellung des
+      Subjects festgelegt wird. Dieser Wert wird jedem neuen Abonnenten sofort
+      mitgeteilt.</p>
+
+    <p>Speicher für aktuellen Wert: Ein BehaviorSubject speichert den zuletzt
+      emittierten Wert und gibt ihn sofort an neue Abonnenten weiter, wenn sie
+      sich anmelden.</p>
+
+    <p>Weitergabe an bestehende und zukünftige Abonnenten: Jeder neue Wert, der
+      an das BehaviorSubject gesendet wird, wird automatisch an alle bestehenden
+      und zukünftigen Abonnenten weitergegeben.</p>
+
+    <p><i>
+        Ein BehaviorSubject wird oft verwendet, wenn du einen zentralen Zustand
+        in deiner Angular-Anwendung verwalten möchtest, der von verschiedenen
+        Teilen der Anwendung gelesen und aktualisiert werden kann. Durch das
+        Speichern des aktuellen Werts und die automatische Weitergabe an alle
+        Abonnenten ermöglicht es BehaviorSubject, einen gemeinsamen Zustand in
+        deiner Anwendung zu synchronisieren.
+      </i></p>
+
+    <textarea name id cols="10" rows="18">
+        import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class DataService {
+  private dataSubject = new BehaviorSubject<string>('Initialwert');
+
+  getData() {
+    return this.dataSubject.asObservable();
+  }
+
+  updateData(newValue: string) {
+    this.dataSubject.next(newValue);
+  }
+}
+
+      </textarea>
+
+  </mat-expansion-panel>
+
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Begriffe
+      </mat-panel-title>
+      <mat-panel-description>
+        Aktuell
+        <mat-icon>account_circle</mat-icon>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <p>Refactoring</p>
+    <p>Daily Standup</p>
+    <p>Boilerplate = <i>Code der immer wieder kommt und an mehereren Stellen
+        verwendet wird</i></p>
+    <p>pushen</p>
+    <p>pullen</p>
+    <p>Springtplanning </p>
+    <p>Sprint Review = <i>Das Team bekommt ein Feedback und es wird geprüft, ob
+        der
+        Product Backlog angepasst werden muss</i></p>
+    <p>Sprint Retrospective</p>
+    <p>User Story</p>
+    <p>Task</p>
+    <p>Jira</p>
+    <p>Confluenc<i>Mit Confluence kannst du alle Dokumente und zugehörigen
+        Informationen in einem zentralen Repository speichern. Es ist möglich,
+        Wissensmanagement nahtlos in den Lebenszyklus der Produktentwicklung zu
+        integrieren und die Zusammenarbeit zu optimieren</i></p>
+  </mat-expansion-panel>
+
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Werkzeuge
+      </mat-panel-title>
+      <mat-panel-description>
+        Seiten, etc
+        <mat-icon>account_circle</mat-icon>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    https://jsonplaceholder.typicode.com/
+  </mat-expansion-panel>
+
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Standalone Componenten
+      </mat-panel-title>
+      <mat-panel-description>
+        Vorteile:
+        <mat-icon>account_circle</mat-icon>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <p>Standalone Componenten Vorteile:</p>
+    <p><i> Wiederverwendbarkeit</i></p>
+    <p><i> Isolierung und Unabhängigkeit</i></p>
+    <p><i> Verbesserte Lesbarkeit und Wartbarkeit</i></p>
+    <p><i> Bessere Trennung von Anliegen</i></p>
+    <p><i> Flexibilität und Skalierbarkeit:</i></p>
+    <p><i> Einfache Integration in andere Anwendungen</i></p>
+    <hr>
+  </mat-expansion-panel>
+
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        SSH Keys
+      </mat-panel-title>
+      <mat-panel-description>
+        Vorgangsweise
+        <mat-icon>account_circle</mat-icon>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <p>SSH Key generieren:</p>
+    <p>https://github.com/settings/profile SSH KEY</p>
+    <p> Generieren: Console -> ssh-keygen -t rsa -b 4096 -C
+      "bernd.obendorferATZEICHENexample.com"</p>
+    <p>id_rsa.pub öffnen und eintragen im Github und Sourcetree</p>
+
+  </mat-expansion-panel>
+
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Angular CLI
+      </mat-panel-title>
+      <mat-panel-description>
+        Befehle
+        <mat-icon>date_range</mat-icon>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <p>Angular CLI</p>
+    <p>ng new projektname: Erstellt ein neues Angular-Projekt mit dem
+      angegebenen
+      Namen.</p>
+    <p> ng g c ordner/Ordnername --standalone false</p>
+
+    <p> ng generate schemaname name: Generiert neue Dateien für verschiedene
+      Teile
+      deiner Angular-Anwendung basierend auf vorgegebenen Schemata wie z. B.
+      component, directive, service, module usw.</p>
+
+    <p> ng serve: Startet einen lokalen Entwicklungsserver und erstellt das
+      Angular-Projekt. Änderungen am Code werden automatisch erkannt und die
+      Anwendung wird neu geladen.</p>
+
+    <p> ng build: Kompiliert das Angular-Projekt für die Bereitstellung.
+      Standardmäßig wird der Build im Verzeichnis dist/ erzeugt.
+    </p>
+    <p> ng test: Führt Unit-Tests für das Angular-Projekt aus. Es verwendet
+      Karma
+      als Test-Runner und Jasmine für die Test-Syntax.
+    </p>
+    <p>ng e2e: Führt End-to-End-Tests für das Angular-Projekt aus. Es verwendet
+      Protractor, um die Anwendung in einem echten Browser zu testen und
+      Interaktionen mit der Benutzeroberfläche durchzuführen.
+    </p>
+    <p> ng lint: Führt statische Code-Analyse durch, um potenzielle Fehler und
+      Codestile-Verstöße zu finden. Es verwendet TSLint oder ESLint (abhängig
+      von
+      der Angular-Version).
+    </p>
+    <p>ng add paketname: Fügt ein neues Paket zur Angular-Anwendung hinzu.
+      Dieser
+      Befehl wird verwendet, um zusätzliche Funktionen oder Bibliotheken zu
+      installieren und die entsprechenden Konfigurationen automatisch
+      einzurichten.
+    </p>
+    <p> ng update paketname: Aktualisiert die Abhängigkeiten deiner
+      Angular-Anwendung auf die neuesten verfügbaren Versionen. Dies umfasst
+      auch
+      Angular selbst sowie andere Abhängigkeiten wie Angular CLI und verwendete
+      Bibliotheken.
+    </p>
+    <p> ng config: Konfiguriert die Einstellungen für das Angular-Projekt, z. B.
+      das
+      Standardformat für Dateiänderungen oder das Vorhandensein von
+      TSLint-Regeln.
+    </p>
+    <p> ng help: Zeigt eine Liste der verfügbaren Angular CLI-Befehle an und
+      bietet
+      Hilfe für jeden Befehl.
+    </p>
+
+  </mat-expansion-panel>
+</mat-accordion>
+
+<br><br><br>

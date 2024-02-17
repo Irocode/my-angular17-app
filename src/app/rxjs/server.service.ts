@@ -17,12 +17,14 @@ export class ServerService {
 
 
     public count = 0;
-    getServerSend() {
+ 
+    getServerSend() {   /*
         this.count = 0;
         setInterval(() => {
              console.log('count from Server', this.count);
             return this.count++;
         }, 300);
+        */
     }
 
     getData() {

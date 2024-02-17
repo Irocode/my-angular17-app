@@ -93,12 +93,12 @@ export class RecipeEditComponent implements OnInit, OnDestroy {
           })
         )
         .subscribe(recipe => {
-          recipeName = recipe.name;
-          recipeImagePath = recipe.imagePath;
-          recipeDescription = recipe.description;
-          if (recipe.ingredients) {
+          recipeName = recipe?.name ?? '';
+          recipeImagePath = recipe?.imagePath ?? '';
+          recipeDescription = recipe?.description ?? '';
+          if (recipe && recipe.ingredients) {
             for (const ingredient of recipe.ingredients) {
-              recipeIngredients.push(
+              (recipeIngredients as unknown as FormArray).push(
                 new FormGroup({
                   name: new FormControl(ingredient.name, Validators.required),
                   amount: new FormControl(ingredient.amount, [

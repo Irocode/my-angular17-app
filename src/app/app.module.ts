@@ -18,6 +18,7 @@ import { RecipeEffects } from './recipes/store/recipe.effects';
 import * as fromAuth from './auth/store/auth.reducer';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 
 @NgModule({
@@ -27,14 +28,19 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HttpClientModule,
     AppRoutingModule,
     EffectsModule.forRoot([AuthEffects, RecipeEffects]),
-    StoreModule.forRoot({auth: fromAuth.authReducer}),
+    StoreModule.forRoot({ auth: fromAuth.authReducer }),
     StoreDevtoolsModule.instrument({ logOnly: environment.production }),
     StoreRouterConnectingModule.forRoot(),
     SharedModule,
     CoreModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  providers: [
+    provideAnimationsAsync()
+  ]
   // providers: [LoggingService]
 })
-export class AppModule {}
+export class AppModule {
+}

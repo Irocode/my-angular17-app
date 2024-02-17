@@ -7,15 +7,21 @@ import { PlaceholderDirective } from './placeholder/placeholder.directive';
 import { DropdownDirective } from './dropdown.directive';
 import { LoggingService } from '../logging.service';
 
+import { provideNativeDateAdapter } from '@angular/material/core';
+
+
 
 @NgModule({
   declarations: [
     AlertComponent,
     LoadingSpinnerComponent,
     PlaceholderDirective,
-    DropdownDirective
+    DropdownDirective,
+
+
   ],
-  imports: [CommonModule],
+  imports: [CommonModule
+   ],
   exports: [
     AlertComponent,
     LoadingSpinnerComponent,
@@ -24,6 +30,10 @@ import { LoggingService } from '../logging.service';
     CommonModule,
 
   ],
-  providers: [LoggingService]
+  providers: [LoggingService, provideNativeDateAdapter()]
 })
-export class SharedModule {}
+export class SharedModule {
+
+}
+
+
