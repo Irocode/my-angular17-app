@@ -50,8 +50,8 @@ const appRoutes: Routes = [
     loadChildren: () => import('./forms/form.module').then(m => m.FormTestsModule),
   }
   , {
-    path: 'test',
-    loadChildren: () => import('./modal/test.module').then(m => m.TesterModule),
+    path: 'modal',
+    loadChildren: () => import('./modal/modal.module').then(m => m.ModalModule),
   }
 ];
 
