@@ -45,6 +45,9 @@ const appRoutes: Routes = [
   , {
     path: 'animation',
     loadChildren: () => import('./animation/animation.module').then(m => m.AnimationModule),
+  } , {
+    path: 'forms',
+    loadChildren: () => import('./forms/form.module').then(m => m.FormTestsModule),
   }
 
 ];
