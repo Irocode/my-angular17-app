@@ -10,11 +10,11 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 
 import { TaskComponent } from './task.component';
-import { DialogOverviewExample } from './dialog-overview-example';
+import { DialogComponent } from './dialog-overview-example';
 
 
 @NgModule({
-  declarations: [TaskComponent, DialogOverviewExample,
+  declarations: [TaskComponent, DialogComponent,
 
   ],
   imports: [

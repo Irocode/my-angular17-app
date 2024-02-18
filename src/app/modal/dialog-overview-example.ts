@@ -27,7 +27,7 @@ export interface DialogData {
   standalone: false,
 
 })
-export class DialogOverviewExample {
+export class DialogComponent {
   animal: string;
   name: string;
 
