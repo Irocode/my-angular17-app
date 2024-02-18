@@ -10,16 +10,17 @@ import {StoreModule} from '@ngrx/store';
 import * as fromShoppingList from './store/shopping-list.reducer';
 import * as fromArticles from './store/article.reducer';
 
-@NgModule({
-  declarations: [ShoppingListComponent, ShoppingEditComponent],
-  imports: [
-    FormsModule,
-    RouterModule.forChild([{ path: '', component: ShoppingListComponent }]),
-    StoreModule.forFeature('shoppingList', fromShoppingList.shoppingListReducer),
-    StoreModule.forFeature('articles', fromArticles.articleReducer),
 
-    SharedModule
-  ],
-  // providers: [LoggingService]
+
+@NgModule({
+    declarations: [ShoppingListComponent, ShoppingEditComponent],
+    imports: [
+        FormsModule,
+        RouterModule.forChild([{ path: '', component: ShoppingListComponent }]),
+        StoreModule.forFeature('shoppingList', fromShoppingList.shoppingListReducer),
+        StoreModule.forFeature('articles', fromArticles.articleReducer),
+        SharedModule,
+       
+    ]
 })
 export class ShoppingListModule {}

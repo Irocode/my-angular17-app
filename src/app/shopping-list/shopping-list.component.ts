@@ -9,6 +9,7 @@ import * as ArticlesActions from '../shopping-list/store/article.actions';
 import * as fromIngredientApp from '../store/app.reducer';
 import * as fromArticlesApp from '../store/app.reducer';
 
+
 @Component({
   selector: 'app-shopping-list',
   templateUrl: './shopping-list.component.html',

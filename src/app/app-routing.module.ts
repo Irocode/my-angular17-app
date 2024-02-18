@@ -49,7 +49,10 @@ const appRoutes: Routes = [
     path: 'forms',
     loadChildren: () => import('./forms/form.module').then(m => m.FormTestsModule),
   }
-
+  , {
+    path: 'test',
+    loadChildren: () => import('./modal/test.module').then(m => m.TesterModule),
+  }
 ];
 
 @NgModule({
